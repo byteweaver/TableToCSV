@@ -13,7 +13,7 @@ class TableToCSV
         @data = ""
         @parse_row table.tHead.rows[0]
         @parse_row row for row in table.tBodies[0].rows
-        blob = new Blob([@data], {type: "text/plain;charset=utf-8"})
+        blob = new Blob([@data], {type: "application/octet-stream;charset=utf-8"})
         saveAs(blob, table.getAttribute('data-table-to-csv'))
 
     parse_row: (row) ->
