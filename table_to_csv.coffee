@@ -17,7 +17,7 @@ class TableToCSV
         saveAs(blob, table.getAttribute('data-table-to-csv'))
 
     parse_row: (row) ->
-        cells = (cell.innerText for cell in row.cells)
+        cells = (cell.innerHTML for cell in row.cells)
         @data += cells.join(',') + "\n"
 
 ttcsv = new TableToCSV
