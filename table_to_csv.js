@@ -39,7 +39,7 @@
         this.parse_row(row);
       }
       blob = new Blob([this.data], {
-        type: "text/plain;charset=utf-8"
+        type: "application/octet-stream;charset=utf-8"
       });
       return saveAs(blob, table.getAttribute('data-table-to-csv'));
     };
@@ -52,7 +52,7 @@
         _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           cell = _ref[_i];
-          _results.push(cell.innerText);
+          _results.push(cell.innerHTML);
         }
         return _results;
       })();
