@@ -18,6 +18,7 @@ class TableToCSV
 
     parse_row: (row) ->
         cells = (cell.innerHTML for cell in row.cells)
+        cells = ('"'+cell+'"' for cell in cells)
         @data += cells.join(',') + "\n"
 
 ttcsv = new TableToCSV
