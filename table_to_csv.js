@@ -56,6 +56,15 @@
         }
         return _results;
       })();
+      cells = (function() {
+        var _i, _len, _results;
+        _results = [];
+        for (_i = 0, _len = cells.length; _i < _len; _i++) {
+          cell = cells[_i];
+          _results.push('"' + cell + '"');
+        }
+        return _results;
+      })();
       return this.data += cells.join(',') + "\n";
     };
 
